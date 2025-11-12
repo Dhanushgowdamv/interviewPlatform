@@ -1,0 +1,19 @@
+# ====================================
+# 🚀 Node.js + VS Code .gitignore file
+# ====================================
+
+# === Node modules ===
+node_modules/
+
+yarn-debug.log*
+yarn-error.log*
+
+
+# === Environment files ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+lib/env.js  # optional if you keep API keys or sensitive data here
+
