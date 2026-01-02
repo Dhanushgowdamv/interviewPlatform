@@ -1,15 +1,20 @@
 import express from "express";
 import path from "path";
 import {ENV} from "./lib/env.js"
+import { connectDB } from "./lib/db.js";
 
 const app = express();
 console.log(ENV.PORT)
 console.log(ENV.DB_URL)
 
-const __dirname = path.resolve()
+const __dirname = path.resolve();
 
-app.get("/",(req,res)=>{
+app.get("/health",(req,res)=>{
     res.status(200).json({msg:"sucess form api"})
+
+});
+app.get("/books",(req,res)=>{
+    res.status(200).json({msg:"sucess form api bookfh"})
 
 });
  
@@ -22,4 +27,15 @@ if(ENV.NODE_ENV === 'production'){
     })
 }
 
-app.listen(ENV.PORT,()=>console.log("server is riunning",ENV.PORT))
+
+
+const startserver = async () =>{
+    try{
+        await connectDB();
+        app.listen(ENV.PORT,()=>console.log("server is riunning",ENV.PORT));
+    }catch (error){
+       console.error("error starting teh server ", error);
+    }
+}
+
+startserver();
