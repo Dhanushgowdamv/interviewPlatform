@@ -1,7 +1,6 @@
 import './App.css'
 import { 
   SignInButton, 
-  SignUpButton,
   SignOutButton, 
   UserButton,
   SignedOut,
@@ -11,11 +10,11 @@ import {
 function App() {
   return (
     <>
-      <h1>Hi, this application</h1>
+      <h1>Welcome to the Interview Platform</h1>
 
       <SignedOut>
         <SignInButton mode="modal">
-  <button className="btn">Login</button>
+         <button className="btn">Login</button>
 </SignInButton>
 
         

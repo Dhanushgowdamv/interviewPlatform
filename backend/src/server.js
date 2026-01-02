@@ -7,14 +7,14 @@ const app = express();
 console.log(ENV.PORT)
 console.log(ENV.DB_URL)
 
-const __dirname = path.resolve();
+const __dirname = path.resolve()
 
 app.get("/health",(req,res)=>{
-    res.status(200).json({msg:"sucess form api"})
+    res.status(200).json({msg:"success from api"})
 
 });
 app.get("/books",(req,res)=>{
-    res.status(200).json({msg:"sucess form api bookfh"})
+    res.status(200).json({msg:"sucess from api bookfh"})
 
 });
  
