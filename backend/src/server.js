@@ -18,7 +18,8 @@ app.use(express.json())
 //server allows the brower to include teh cookies in the request =>credentials:true meaning
 app.use(cors({origin:ENV.CLIENT_URL,credentials:true}))
 
-app.use("api/inngest", serve({client:inngest,functions}))
+app.use("api/inngest", serve({client:inngest,
+    functions:[]}))
 
 
 app.get("/health",(req,res)=>{
