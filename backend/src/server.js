@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
 
 app.use(
-  "api/inngest",
+  "/api/inngest",
   serve({
     client: inngest,
     functions,
@@ -45,7 +45,7 @@ if (ENV.NODE_ENV === "production") {
 const startserver = async () => {
   try {
     await connectDB();
-    app.listen(ENV.PORT, () =>
+    app.listen(ENV.PORT|| 3000 , () =>
       console.log("server is riunning", ENV.PORT)
     );
   } catch (error) {
